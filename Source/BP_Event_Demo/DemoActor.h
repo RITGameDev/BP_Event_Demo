@@ -19,12 +19,17 @@ protected:
     // Called when the game starts or when spawned
     virtual void BeginPlay() override;
 
-
-    /** this can be overridden in blueprints to add in some more functoinality if need be */
+    /** this can be overridden in blueprints to add in some more functionality if need be */
     UFUNCTION( BlueprintImplementableEvent, Category = "Demo Items", meta = ( DisplayName = "Player Behavior ~ Demo Item" ) )
     void PlayerBehaviorTick() const;
 
+    /** A Simple function that can be called form blueprints */
+    UFUNCTION( BlueprintCallable, Category = "Demo Items" )
+    void SimpleBPFunction();
 
+    UFUNCTION( BlueprintNativeEvent, Category = "Demo Items" )
+    int32 SimpleNativeEvent( int32 aParam );
+    virtual int32 SimpleNativeEvent_Implementation( int32 aParam );
 
 public:
     // Called every frame

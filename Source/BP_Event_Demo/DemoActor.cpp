@@ -17,6 +17,17 @@ void ADemoActor::BeginPlay()
 	
 }
 
+void ADemoActor::SimpleBPFunction()
+{
+    UE_LOG( LogTemp, Warning, TEXT( __FUNCTION__ ) );
+}
+
+int32 ADemoActor::SimpleNativeEvent_Implementation( int32 aParam )
+{
+    UE_LOG( LogTemp, Warning, TEXT( __FUNCTION__ ) );
+    return int32();
+}
+
 // Called every frame
 void ADemoActor::Tick(float DeltaTime)
 {
@@ -25,4 +36,3 @@ void ADemoActor::Tick(float DeltaTime)
     PlayerBehaviorTick();
 
 }
-
